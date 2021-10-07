@@ -19,7 +19,7 @@ function App() {
         <Route path={["/addUser", "/editUser/:_id"]} component={AddUser} />
         <Route path="/*" component={Error} />
       </Switch>
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 }

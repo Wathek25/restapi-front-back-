@@ -21,23 +21,30 @@ const UserCard = ({ user }) => {
         <div className="card-head">
           <img
             className="avatar"
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQhhklLpQnJpmdcRWm07dxiiIp22D9ZaFlhzNF5S7EMPxEinocq&usqp=CAU"
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/User-avatar.svg/1200px-User-avatar.svg.png"
             alt="Username"
           />
         </div>
         <div className="card-body">
           <div>
             <span className="Student-name">
-              {user.lastName} <b>{user.firstName || ""}</b>
-              <span className="badge">PRO</span>
+              {user.lastName} <b>{user.firstName}</b>
+              {/* <span className="badge">PRO</span> */}
             </span>
-            <span className="username">@{user.email}</span>
-          </div>
-          <div className="student-infos">
-            <span className="Student-description">
-              <p>{user.phone}</p>
+            <span className="username">
+              <b>Email: </b>
+              {user.email}
+            </span>
+            <span className="username">
+              <b>Age: </b>
+              {user.age}
+            </span>
+            <span className="username">
+              <b>Phone: </b>
+              {user.phone}
             </span>
           </div>
+
           <div className="btn-card">
             <Link to={`/editUser/${user._id}`}>
               <EditIcon onClick={() => dispatch(getUser(user._id))} />

@@ -29,11 +29,11 @@ const AddUser = () => {
     }
     edit
       ? setUser(editedUser)
-      : setUser({ name: "", lastName: "", phone: "", email: "" });
+      : setUser({ firstName: "", lastName: "", phone: "", email: "", age: "" });
   }, [edit, editedUser, params._id]);
 
   const handleClick = () => {
-    console.log(params._id);
+    // console.log(params._id);
     // e.preventDefault();
     user.email
       ? !edit
@@ -64,18 +64,27 @@ const AddUser = () => {
       >
         <TextField
           id="outlined-basic"
-          label="name"
+          placeholder="firstName"
           variant="outlined"
-          name="name"
+          name="firstName"
           onChange={handleChange}
-          value={user.name}
+          value={user.firstName}
+          style={{ margin: "0.5%", width: "35%" }}
+        />
+        <TextField
+          id="outlined-basic"
+          placeholder="lastName"
+          variant="outlined"
+          name="lastName"
+          onChange={handleChange}
+          value={user.lastName}
           style={{ margin: "0.5%", width: "35%" }}
         />
         <TextField
           style={{ margin: "0.5%", width: "35%" }}
           type="number"
           id="outlined-basic"
-          label="age"
+          placeholder="age"
           variant="outlined"
           name="age"
           value={user.age}
@@ -85,10 +94,20 @@ const AddUser = () => {
           style={{ margin: "0.5%", width: "35%" }}
           required
           id="outlined-basic"
-          label="email"
+          placeholder="email"
           variant="outlined"
           name="email"
           value={user.email}
+          onChange={handleChange}
+        />
+        <TextField
+          style={{ margin: "0.5%", width: "35%" }}
+          required
+          id="outlined-basic"
+          placeholder="phone"
+          variant="outlined"
+          name="phone"
+          value={user.phone}
           onChange={handleChange}
         />
         <button

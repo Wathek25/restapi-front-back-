@@ -1,6 +1,6 @@
 h4 {
   text-align: center;
-  bottom: 0;
-  position: fixed;
+
+  position: absolute;
   width: 100%;
 }

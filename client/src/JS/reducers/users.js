@@ -17,7 +17,7 @@ const userReducer = (state = initialState, { type, payload }) => {
     case GET_ALL_USERS_LOAD:
       return { ...state, isLoad: true };
     case GET_ALL_USERS:
-      return { ...state, users: payload.users, isLoad: false, isError: false };
+      return { ...state, users: payload.user, isLoad: false, isError: false };
     case GET_USER:
       return { ...state, user: payload.user, isLoad: false, isError: false };
     case GET_ALL_USERS_FAIL:

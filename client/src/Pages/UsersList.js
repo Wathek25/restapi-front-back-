@@ -4,6 +4,7 @@ import UserCard from "../Components/UserCard";
 import { getAllUsers } from "../JS/actions/users";
 import CircularProgress from "@mui/material/CircularProgress";
 import Box from "@mui/material/Box";
+import "./UserList.css";
 
 const UsersList = () => {
   const users = useSelector((state) => state.userReducer.users);
@@ -23,10 +24,11 @@ const UsersList = () => {
         </Box>
       ) : isError ? (
         <h4>Can not get the data</h4>
-      ) : !users.length ? (
-        <h4>There is no user to show</h4>
       ) : (
-        <div className="UserList">
+        // ) : !users.length ? (
+        //   <h4>There is no user to show</h4>
+        <div className="users">
+          {console.log(users)}
           {users.map((el) => (
             <UserCard user={el} key={el._id} />
           ))}
